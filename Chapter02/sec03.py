@@ -22,3 +22,28 @@ print(type(age)) #str 문자
 str_num=input("숫자를 입력> ")
 int_num=int(str_num)
 print(type(int_num))
+
+#마무리 연습문제 04
+str_input1=input("숫자 입력> ")
+num_input1=float(str_input1)
+print()
+print(num_input1,"inch")
+print((num_input1*2.54),"cm")
+
+#마무리 연습문제 05
+str_input2=input("원의 반지름 입력> ")
+num_input2=float(str_input2)
+print()
+print("반지름: ",num_input2)
+print("둘레: ",2*3.14*num_input2)
+print("넓이: ",3.14*num_input2**2) # '**'는 제곱
+
+#마무리 연습문제 06
+a=input("문자열 입력> ")
+b=input("문자열 입력> ")
+
+print(a,b)
+change=a
+a=b
+b=change
+print(a,b)
