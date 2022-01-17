@@ -81,7 +81,7 @@ character={
         "armor":"풀플레이트"
     },
     "skill":["베기","세게 베기","아주 세게 베기"]
-}
+} 
 
 for key in character:
     if type(character[key]) is dict:
