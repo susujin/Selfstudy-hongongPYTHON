@@ -111,3 +111,12 @@ def sum_all(start=0,end=100,step=1):
 print("a.",sum_all(0,100,10))
 print("b.",sum_all(end=100))
 print("c.",sum_all(end=100,step=2))
+
+#마무리 연습문제 02
+def mul(*values):
+    result=1
+    for i in values:
+        result*=i
+    return result
+
+print(mul(5,7,9,10))
