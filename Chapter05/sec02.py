@@ -58,3 +58,40 @@ print("---------")
 print("fibonacci(10) 계산에 활용된 덧셈 횟수는 {}번 입니다.".format(counter))
 
 #마무리 연습문제 01
+def flatten(data):
+    result_data=[]
+    for i in data:
+        if type(i)==list:
+            result_data+=flatten(i)
+        else:
+            result_data.append(i)
+    return result_data
+
+example=[[1,2,3],[4,[5,6]],7,[8,9]]
+print("원본: ",example)
+print("변환: ",flatten(example))
+
+#마무리 연습문제 02
+sit_min=2
+sit_max=10
+all_people=100
+memo={}
+
+def question(left,sit):
+    key=str([left,sit])
+    if key in memo:
+        return memo[key]
+    if left<0:
+        return 0
+    if left==0:
+        return 1
+
+    count=0
+    for i in range(sit,sit_max+1):
+        count+=question(left-i,i)
+    
+    memo[key]=count
+    
+    return count
+
+print(question(all_people,sit_min))
