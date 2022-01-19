@@ -87,3 +87,23 @@ print("filter()실행")
 print("filter(uner_3,list_input_a) : ",output_b)
 print("filter(uner_3,list_input_a) : ",list(output_b))
 print()
+
+#마무리 연습문제 01
+numbers=[1,2,3,4,5,6]
+print("::".join(map(str,numbers)))
+print()
+
+#마무리 연습문제 02
+numbers=list(range(1,10+1))
+
+print("홀수만 추출")
+print(list(filter(lambda x:x%2==1,numbers)))
+print()
+
+print("3이상 7미만 추출")
+print(list(filter(lambda x:x>=3 and x<7,numbers)))
+print()
+
+print("제곱해서 50미만 추출")
+print(list(filter(lambda x:x**2<50,numbers)))
+print()
