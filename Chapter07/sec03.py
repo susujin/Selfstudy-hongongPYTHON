@@ -1,4 +1,5 @@
 #모듈 만들기
+from flask import request
 import sec03_test_module as test
 
 radius=test.number_input()
@@ -26,3 +27,14 @@ radius=test3.number_input()
 print(test3.get_circumference(radius))
 print(test3.get_circle_area(radius))
 print()
+
+#이미지 읽어 들이고 저장
+from urllib import request
+
+target=request.urlopen("https://www.hanbit.co.kr/images/common/logo_hanbit.png")
+output=target.read()
+print(output)
+
+file=open("output.png","wb")
+file.write(output)
+file.close()
