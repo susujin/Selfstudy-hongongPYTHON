@@ -31,7 +31,7 @@ print()
 #이미지 읽어 들이고 저장
 from urllib import request
 
-target=request.urlopen("https://www.hanbit.co.kr/images/common/logo_hanbit.png")
+target=request.urlopen("url입력")
 output=target.read()
 print(output)
 
