@@ -1,4 +1,7 @@
 #객체
+from re import S
+
+
 students=[
     {"name":"홍길동","korean":87,"math":98,"english":88,"science":95},
     {"name":"유관순","korean":92,"math":98,"english":98,"science":90},
@@ -71,3 +74,59 @@ students=[
 print()
 
 #클래스
+class Student:
+    def __init__(self,name,korean,math,english,science):
+        self.name=name
+        self.korean=korean
+        self.math=math
+        self.english=english
+        self.science=science
+
+students=[
+    Student("땅콩",98,43,54,87),
+    Student("아몬드",93,77,80,95),
+    Student("피스타치오",78,98,84,62),
+    Student("해바라기씨",88,83,33,79),
+    Student("호두",73,55,77,67),
+    Student("브라질너트",94,80,99,87),
+]
+
+print(students[0].name)
+print(students[0].korean)
+print(students[0].math)
+print(students[0].english)
+print(students[0].science)
+print()
+
+#메소드
+#클래스 내부에 메소드 선언
+class Student2:
+    def __init__(self,name,korean,math,english,science):
+        self.name=name
+        self.korean=korean
+        self.math=math
+        self.english=english
+        self.science=science
+
+    def get_sum(self):
+        return self.korean+self.math+self.english+self.science
+    
+    def get_average(self):
+        return self.get_sum()/4
+    
+    def to_string(self):
+        return "{}\t{}\t{}".format(self.name,self.get_sum(),self.get_average())
+
+students=[
+    Student2("복숭아",98,43,54,87),
+    Student2("딸기",93,77,80,95),
+    Student2("포도",78,98,84,62),
+    Student2("귤",88,83,33,79),
+    Student2("바나나",73,55,77,67),
+    Student2("사과",94,80,99,87),
+]
+
+print("이름","총점","평균",sep='\t')
+for student in students:
+    print(student.to_string())
+print()
