@@ -95,3 +95,76 @@ print("st_a>st_b : ",st_a>st_b)
 print("st_a>=st_b : ",st_a>=st_b)
 print("st_a<st_b : ",st_a<st_b)
 print("st_a<=st_b : ",st_a<=st_b)
+print()
+
+#클래스변수
+class Student4:
+    count=0
+
+    def __init__(self,name,korean,math,english,science):
+        self.name=name
+        self.korean=korean
+        self.math=math
+        self.english=english
+        self.science=science
+
+        Student4.count+=1
+        print("{}번째 학생이 생성되었습니다.".format(Student4.count))
+
+students4=[
+    Student4("정수정",98,65,77,87),
+    Student4("하수연",38,95,74,76),
+    Student4("김지현",83,88,89,100),
+    Student4("연세인",98,65,40,99),
+    Student4("강지민",98,100,77,54),
+    Student4("원서운",95,62,73,87),
+]
+print()
+print("현재 생성된 총 학생 수는 {}명입니다.".format(Student4.count))
+print()
+
+#클래스 함수
+class Student5:
+    count=0
+    students=[]
+
+    @classmethod
+    def print(cls):
+        print("---------학생목록---------")
+        print("이름\t총점\t평균")
+        for student in cls.students:
+            print(str(student))
+        print("-------------------------")
+
+    def __init__(self,name,korean,math,english,science):
+        self.name=name
+        self.korean=korean
+        self.math=math
+        self.english=english
+        self.science=science
+        Student5.count+=1
+        Student5.students.append(self)
+
+    def get_sum(self):
+        return self.korean+self.english+self.math+self.science
+    def get_avg(self):
+        return self.get_sum()/4
+
+    def __str__(self):
+        return "{}\t{}\t{}".format(self.name,self.get_sum(),self.get_avg())
+
+Student5("고현정",38,95,74,76)
+Student5("양동이",83,88,89,100)
+Student5("박우니",98,65,40,99)
+Student5("김지현",83,88,89,100)
+Student5("연세인",98,65,40,99)
+Student5("강지민",98,100,77,54)
+Student5("원서운",95,62,73,87)
+Student5("김순이",98,65,77,87)
+Student5("정수정",98,65,77,87)
+Student5("하수연",38,95,74,76)
+Student5("이하윤",98,100,77,54)
+Student5("정예진",95,62,73,87)
+
+Student5.print()
+print()
